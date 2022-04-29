@@ -1,11 +1,12 @@
-module.exports = {
-  extends: [
+{
+  "extends": [
     // add more generic rulesets here, such as:
-    // 'eslint:recommended',
-    'plugin:vue/vue3-recommended',
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript/recommended"
     // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
   ],
-  rules: {
+  "rules": {
     // override/add rules settings here, such as:
     // 'vue/no-unused-vars': 'error'
     "vue/max-attributes-per-line": ["error", {
@@ -15,9 +16,15 @@ module.exports = {
       "multiline": {
         "max": 1
       }
+    }],
+    "vue/singleline-html-element-content-newline": ["error", {
+      "ignoreWhenNoAttributes": true,
+      "ignoreWhenEmpty": true,
+      "ignores": ["pre", "textarea", "...INLINE_ELEMENTS"]
     }]
   },
   "parserOptions": {
-    "ecmaVersion": 2017
+    "ecmaVersion": 2020
   }
+  // parser: "babel-eslint"
 }

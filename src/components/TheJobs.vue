@@ -1,7 +1,6 @@
 <template>
 		<main
-			v-for="job in Jobs"
-			:key="job.name"
+			v-for="job in Jobs"	:key="job.name"
 			class="py-5 text-center hover:bg-gray-600 hover:text-white"
 		>
 			<hr>

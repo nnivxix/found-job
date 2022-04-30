@@ -1,8 +1,8 @@
 <template>
-  <p>hello {{ name }} </p>
-  <button @click="changeName('Han')">
-    change name
-  </button>
+		<p>hello {{ name }} </p>
+		<button @click="changeName('Han')">
+			change name
+		</button>
 </template>
 
 <script lang="ts">

@@ -21,6 +21,17 @@
       "ignoreWhenNoAttributes": true,
       "ignoreWhenEmpty": true,
       "ignores": ["pre", "textarea", "...INLINE_ELEMENTS"]
+    }],
+    "vue/first-attribute-linebreak": ["error", {
+      "singleline": "ignore",
+      "multiline": "below"
+    }],
+    "vue/html-indent": ["error", "tab", {
+      "attribute": 1,
+      "baseIndent": 2,
+      "closeBracket": 0,
+      "alignAttributesVertically": true,
+      "ignores": []
     }]
   },
   "parserOptions": {

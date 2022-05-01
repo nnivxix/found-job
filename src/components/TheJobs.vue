@@ -1,19 +1,10 @@
 <template>
-		<main
-			v-for="job in Jobs"	:key="job.name"
-			class="py-5 text-center hover:bg-gray-600 hover:text-white"
-		>
-			<hr>
-			<h1>{{ job.name }}</h1>
-			<p>
-				{{ job.location }} | <span class="font-bold">{{ formatToCurrency(job.salary) }}
-				</span>
-			</p>
-		</main>
+		<ListJob :jobs="Jobs" />
 </template>
 
 <script lang="ts" setup>
 import Job from '../types/Job';
+import ListJob from './ListJob.vue';
 import {ref} from 'vue';
 
 
@@ -23,9 +14,5 @@ const Jobs = ref<Job[]>([
   {id: '454tfe', name: 'Mie Ayam Creator', location:'Terminal', salary: 46000},
   {id: '6uhsgfs', name: 'Driver Angkot', location: 'Cisaga', salary:65000}
 ])
-
-const formatToCurrency = (amount: number) => {
-  return "Rp. " + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-};
 
 </script>

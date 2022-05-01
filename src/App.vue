@@ -6,12 +6,11 @@ import TheJobs from './components/TheJobs.vue';
 </script>
 
 <template>
-		<h1 class="text-3xl font-bold text-white underline bg-blue-600 p-4">
-			hello world
-		</h1>
-		<HelloComponent />
 		<TheJobs />
 </template>
 
 <style>
+body {
+	background-color: #D8B4FE;
+}
 </style>

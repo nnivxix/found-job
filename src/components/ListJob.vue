@@ -1,18 +1,22 @@
 <template>
-  <h2 class="text-center ml-6 font-bold text-2xl py-4 text-purple-800">Order by {{ order }}</h2>
-  <ul class="flex items-center flex-col ">
-    <li
-      v-for="job in orderJob" :key="job.id"
-      class="py-3 px-6 my-2 mx-4 bg-white text-black md:w-[70%]"
-    >
-      <h2 class="text-lg font-medium">
-        {{ job.name }}
-      </h2>
-      <p>Salary : {{ formatToCurrency(job.salary) }}</p>
-      <p>Location : {{ job.location }}</p>
-      <p class=" pt-2 text-[14px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, eos in. Earum, sunt corporis! Incidunt, natus consequuntur commodi nulla nihil accusantium deserunt dolores!</p>
-    </li>
-  </ul>
+    <h2 class="text-center ml-6 font-bold text-2xl py-4 text-purple-800">
+      Order by {{ order }}
+    </h2>
+    <transition-group name="list" class="flex items-center flex-col " tag="ul">
+      <li
+        v-for="job in orderJob" :key="job.id"
+        class="py-3 px-6 my-2 mx-4 bg-white text-black md:w-[70%] list-none"
+      >
+        <h2 class="text-lg font-medium">
+          {{ job.name }}
+        </h2>
+        <p>Salary : {{ formatToCurrency(job.salary) }}</p>
+        <p>Location : {{ job.location }}</p>
+        <p class=" pt-2 text-[14px]">
+          {{ job.description }}
+        </p>
+      </li>
+    </transition-group>
 </template>
 <script setup lang="ts">
 import { defineProps, PropType, computed } from 'vue';
@@ -26,7 +30,7 @@ const props = defineProps({
   },
   order: {
     required: true,
-    tyep: String as PropType<OrderTerm>
+    type: String as PropType<OrderTerm>
   }
 });
 const formatToCurrency = (amount: number) => {
@@ -40,3 +44,9 @@ const orderJob = computed(() => {
 
 console.log(props.jobs);
 </script>
+
+<style>
+.list-move{
+  transition: all 0.5s;
+}
+</style>

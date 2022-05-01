@@ -26,7 +26,7 @@
       "singleline": "ignore",
       "multiline": "below"
     }],
-    "vue/html-indent": ["error", "space", {
+    "vue/html-indent": ["error", 2, {
       "attribute": 1,
       "baseIndent": 2,
       "closeBracket": 0,

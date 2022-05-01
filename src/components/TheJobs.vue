@@ -1,9 +1,12 @@
 <template>
-  <button class="m-3 bg-purple-500 text-white py-2 px-4 font-semibold  border-2 border-purple-800 rounded-md" @click="OrderHandle('name')">Order By Name</button>
-  <button class="m-3 bg-purple-500 text-white py-2 px-4 font-semibold  border-2 border-purple-800 rounded-md" @click="OrderHandle('salary')">Order By Salary</button>
-  <button class="m-3 bg-purple-500 text-white py-2 px-4 font-semibold  border-2 border-purple-800 rounded-md" @click="OrderHandle('location')">Order By Location</button>
+  <div class="flex justify-center">
+    <button class="m-3 bg-purple-500 text-purple-100 py-2 px-4 font-semibold  border-2 border-purple-800 rounded-md" @click="OrderHandle('name')">Order By Name</button>
+    <button class="m-3 bg-purple-500 text-purple-100 py-2 px-4 font-semibold  border-2 border-purple-800 rounded-md" @click="OrderHandle('salary')">Order By Salary</button>
+    <button class="m-3 bg-purple-500 text-purple-100 py-2 px-4 font-semibold  border-2 border-purple-800 rounded-md" @click="OrderHandle('location')">Order By Location</button>
+  </div>
+    <ListJob :jobs="Jobs" :order="order" />
   
-	<ListJob :jobs="Jobs" :order="order" />
+
 </template>
 
 <script lang="ts" setup>
